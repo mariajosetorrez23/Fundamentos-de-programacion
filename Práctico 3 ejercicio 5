@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    long long prod = 1;
+    printf("Ingrese N: ");
+    scanf("%d", &n);
+
+    for(i = 1; i <= n; i++) {
+        prod *= i;
+    }
+
+    printf("El producto es: %lld\n", prod);
+    return 0;
+}
