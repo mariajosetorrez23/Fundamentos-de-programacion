@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float a, b, c, d;
+
+    printf("Ingrese a, b, c: ");
+    scanf("%f %f %f", &a, &b, &c);
+
+    if (a == 0) {
+        if (b == 0)
+            printf("No hay solución\n");
+        else
+            printf("Una solución: x = %.2f\n", -c/b);
+    } else {
+        d = b*b - 4*a*c;
+        if (d > 0)
+            printf("Dos soluciones reales\n");
+        else if (d == 0)
+            printf("Una solución real doble\n");
+        else
+            printf("Dos soluciones complejas\n");
+    }
+    return 0;
+}
