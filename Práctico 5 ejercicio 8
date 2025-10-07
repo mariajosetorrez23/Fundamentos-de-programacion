@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int h, hq, p, s;
+    float total;
+
+    printf("Hamburguesas normales: ");
+    scanf("%d", &h);
+    printf("Hamburguesas con queso: ");
+    scanf("%d", &hq);
+    printf("Papas fritas: ");
+    scanf("%d", &p);
+    printf("Sodas: ");
+    scanf("%d", &s);
+
+    total = h*3 + hq*5 + p*2 + s*2.5;
+
+    printf("Total a pagar: Bs %.2f\n", total);
+    return 0;
+}
