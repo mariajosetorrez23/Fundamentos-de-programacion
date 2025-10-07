@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    float p1, p2, practico, final;
+    int faltas;
+    int alumnos = 0;
+
+    while (1) {
+        printf("Ingrese parciales, práctico, final y faltas (o -1 para salir): ");
+        scanf("%f", &p1);
+        if (p1 == -1) break;
+        scanf("%f %f %f %d", &p2, &practico, &final, &faltas);
+
+        float nf;
+
+        if (faltas > (48 * 0.2))
+            nf = 0;
+        else
+            nf = (p1 * 0.4 + practico * 0.2 + final * 0.4);
+
+        printf("Nota final: %.2f - %s\n", nf, nf >= 51 ? "Aprobado" : "Reprobado");
+        alumnos++;
+    }
+
+    printf("Total de alumnos procesados: %d\n", alumnos);
+return 0; 
+}
