@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, suma = 0;
+    printf("Ingrese un numero N: ");
+    scanf("%d", &n);
+
+    for(i = 1; i <= n; i++) {
+        if(i % 2 != 0) {
+            suma += i;
+        }
+    }
+
+    printf("La suma de los impares es: %d\n", suma);
+    return 0;
+}
