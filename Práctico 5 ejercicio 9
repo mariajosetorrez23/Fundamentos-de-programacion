@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int op;
+    float L, R, B, H, A;
+
+    printf("1. Cuadrado\n2. Círculo\n3. Triángulo\n");
+    printf("Ingrese opción: ");
+    scanf("%d", &op);
+
+    switch(op) {
+        case 1:
+            printf("Ingrese lado: ");
+            scanf("%f", &L);
+            A = L * L;
+            break;
+        case 2:
+            printf("Ingrese radio: ");
+            scanf("%f", &R);
+            A = M_PI * R * R;
+            break;
+        case 3:
+            printf("Ingrese base y altura: ");
+            scanf("%f %f", &B, &H);
+            A = (B * H) / 2;
+            break;
+        default:
+            printf("Opción inválida\n");
+            return 0;
+    }
+
+    printf("Área: %.2f\n", A);
+return 0;
+}
