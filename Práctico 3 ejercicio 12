@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int a, b, mcd, mcm, r, x, y;
+    printf("Ingrese dos numeros: ");
+    scanf("%d %d", &a, &b);
+
+    x = a; y = b;
+    while(b != 0) {
+        r = a % b;
+        a = b;
+        b = r;
+    }
+    mcd = a;
+    mcm = (x * y) / mcd;
+
+    printf("El MCM es: %d\n", mcm);
+    return 0;
+}
