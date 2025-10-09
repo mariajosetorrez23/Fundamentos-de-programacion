@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int n, dig, numComp = 0, mult = 1;
+    printf("Ingrese un numero: ");
+    scanf("%d", &n);
+
+    while (n > 0) {
+        dig = n % 10;
+        numComp = numComp + (9 - dig) * mult;
+        mult = mult * 10;
+        n = n / 10;
+    }
+
+    printf("El complemento a 9 es: %d\n", numComp);
+    return 0;
+}
