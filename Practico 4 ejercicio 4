@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int n, original, invertido = 0, dig;
+    printf("Ingrese un numero: ");
+    scanf("%d", &n);
+
+    original = n;
+
+    while (n > 0) {
+        dig = n % 10;
+        invertido = invertido * 10 + dig;
+        n = n / 10;
+    }
+
+    if (original == invertido)
+        printf("Es capicua\n");
+    else
+        printf("No es capicua\n");
+
+    return 0;
+}
