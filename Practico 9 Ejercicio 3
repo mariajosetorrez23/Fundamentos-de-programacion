@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+long long FAC(int n) {
+    long long f = 1;
+    for (int i = 1; i <= n; i++)
+        f *= i;
+    return f;
+}
+
+double serie1(int x, int n) {
+    double S = 0;
+    for (int i = 1; i <= n; i++)
+        S += pow(x, i) / FAC(i);
+    return S;
+}
+
+int main() {
+    int x, n;
+    cout << "Ingrese X: ";
+    cin >> x;
+    cout << "Ingrese N: ";
+    cin >> n;
+    cout << "Suma de la serie = " << serie1(x, n) << endl;
+    return 0;
+}
