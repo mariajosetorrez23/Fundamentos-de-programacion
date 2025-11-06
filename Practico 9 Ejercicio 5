@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+void resolverSistema(double A, double B, double C, double D, double E, double F) {
+    double det = A * E - B * D;
+    if (det == 0) {
+        cout << "El sistema no tiene solucion unica (determinante = 0)" << endl;
+        return;
+    }
+    double x = (B * F - C * E) / det;
+    double y = (C * D - A * F) / det;
+    cout << "Solucion:" << endl;
+    cout << "x = " << x << endl;
+    cout << "y = " << y << endl;
+}
+
+int main() {
+    double A, B, C, D, E, F;
+    cout << "Ingrese A, B, C: ";
+    cin >> A >> B >> C;
+    cout << "Ingrese D, E, F: ";
+    cin >> D >> E >> F;
+    resolverSistema(A, B, C, D, E, F);
+    return 0;
+}
