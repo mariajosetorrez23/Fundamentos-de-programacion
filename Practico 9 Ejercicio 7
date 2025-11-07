@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+long long FAC(int n) {
+    long long f = 1;
+    for (int i = 1; i <= n; i++)
+        f *= i;
+    return f;
+}
+
+long long COMBI(int n, int r) {
+    if (r > n || r < 0) return 0;
+    return FAC(n) / (FAC(r) * FAC(n - r));
+}
+
+int main() {
+    int n, r;
+    cout << "Ingrese n: ";
+    cin >> n;
+    cout << "Ingrese r: ";
+    cin >> r;
+    cout << "Combinatorio C(" << n << "," << r << ") = " << COMBI(n, r) << endl;
+    return 0;
+}
