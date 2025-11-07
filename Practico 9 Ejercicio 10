@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void ROMANO(int n) {
+    string miles[]  = {"", "M", "MM", "MMM"};
+    string centenas[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+    string decenas[]  = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+    string unidades[] = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+
+    if (n <= 0 || n > 3999) {
+        cout << "Numero fuera de rango (1-3999)" << endl;
+        return;
+    }
+
+    cout << "Numero romano: " 
+         << miles[n / 1000]
+         << centenas[(n % 1000) / 100]
+         << decenas[(n % 100) / 10]
+         << unidades[n % 10]
+         << endl;
+}
+
+int main() {
+    int n;
+    cout << "Ingrese un numero (1-3999): ";
+    cin >> n;
+    ROMANO(n);
+    return 0;
+}
+
