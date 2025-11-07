@@ -1,0 +1,49 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+string unidades(int n) {
+    string u[] = {"", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"};
+    return u[n];
+}
+
+string decenas(int n) {
+    string d[] = {"", "diez", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"};
+    if (n < 10) return unidades(n);
+    if (n < 20) {
+        string especiales[] = {"diez", "once", "doce", "trece", "catorce", "quince", 
+                               "dieciseis", "diecisiete", "dieciocho", "diecinueve"};
+        return especiales[n - 10];
+    }
+    int dec = n / 10;
+    int uni = n % 10;
+    return d[dec] + (uni ? " y " + unidades(uni) : "");
+}
+
+string centenas(int n) {
+    string c[] = {"", "cien", "doscientos", "trescientos", "cuatrocientos", 
+                  "quinientos", "seiscientos", "setecientos", "ochocientos", "novecientos"};
+    if (n == 100) return "cien";
+    return c[n / 100] + (n % 100 ? " " + decenas(n % 100) : "");
+}
+
+string convertir(int n) {
+    if (n == 0) return "cero";
+    string texto = "";
+    if (n >= 1000) {
+        texto += unidades(n / 1000) + " mil ";
+        n %= 1000;
+    }
+    texto += centenas(n);
+    return texto;
+}
+
+void LITERAL_BS(double valor) {
+    int entero = (int)valor;
+    int centavos = round((valor - entero) * 100);
+    cout << "Bs " << valor << " = " << convertir(entero)
+         << " " << centavos << "/100 bolivianos" << endl;
+}
+
+int main() {
