@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+// Función para convertir números del 0 al 99 a texto
+string convertirNumero(int n) {
+string unidades[] = {"cero", "uno", "dos", "tres", "cuatro", "cinco",
+"seis", "siete", "ocho", "nueve", "diez", "once",
+"doce", "trece", "catorce", "quince", "dieciseis",
+"diecisiete", "dieciocho", "diecinueve"};
+string decenas[] = {"", "", "veinte", "treinta", "cuarenta",
+"cincuenta", "sesenta", "setenta",
+"ochenta", "noventa"};
+
+if (n < 20) return unidades[n];
+else {
+int d = n / 10;
+int u = n % 10;
+if (u == 0) return decenas[d];
+else return decenas[d] + " y " + unidades[u];
+}
+}
+
+int main() {
+double numero;
+cout << "Ingresa un numero real con dos decimales : ";
+cin >> numero;
+
+int parteEntera = (int)numero;
+int parteDecimal = round((numero - parteEntera) * 100);
+
+cout << "En palabras: " << convertirNumero(parteEntera)
+<< " con " << convertirNumero(parteDecimal)
+<< " centesimos." << endl;
+return 0;
+
+}
