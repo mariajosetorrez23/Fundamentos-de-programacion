@@ -19,6 +19,6 @@ int main() {
     cin >> n;
     cout << "Ingrese r: ";
     cin >> r;
-    cout << "Combinatorio C(" << n << "," << r << ") = " << COMBI(n, r) << endl;
+    cout << "C(" << n << "," << r << ") = " << COMBI(n, r) << endl;
     return 0;
 }
