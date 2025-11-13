@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Cantidad de elementos: ";
+    cin >> n;
+
+    vector<double> v(n);
+    cout << "Ingrese los valores:\n";
+    for (int i = 0; i < n; ++i)
+        cin >> v[i];
+
+    double maximo = v[0];
+    for (int i = 1; i < n; ++i)
+        if (v[i] > maximo)
+            maximo = v[i];
+
+    cout << "Maximo: " << maximo << endl;
+    return 0;
+}
