@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Cantidad de alumnos: ";
+    cin >> n;
+
+    vector<string> alumnos(n);
+    vector<double> notas(n);
+
+    cout << "Ingrese nombre y nota:\n";
+    for (int i = 0; i < n; ++i) {
+        cin >> alumnos[i] >> notas[i];
+    }
+
+    // ordenar por nota DESCENDENTE (burbuja simple para ver la idea)
+    for (int i = 0; i < n - 1; ++i) {
+        for (int j = 0; j < n - 1 - i; ++j) {
+            if (notas[j] < notas[j+1]) {
+                swap(notas[j], notas[j+1]);
+                swap(alumnos[j], alumnos[j+1]);
+            }
+        }
+    }
+
+    cout << "Tres mejores:\n";
+    int limite = min(3, n);
+    for (int i = 0; i < limite; ++i) {
+        cout << alumnos[i] << " - " << notas[i] << endl;
+    }
+
+    return 0;
+}
