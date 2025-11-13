@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Cantidad de elementos: ";
+    cin >> n;
+
+    vector<double> A(n);
+    cout << "Ingrese los valores del vector:\n";
+    for (int i = 0; i < n; ++i)
+        cin >> A[i];
+
+    cout << "Promedios de cada 3 consecutivos:\n";
+    for (int i = 0; i <= n - 3; ++i) {
+        double prom = (A[i] + A[i+1] + A[i+2]) / 3.0;
+        cout << "P" << (i+1) << " = " << prom << endl;
+    }
+
+    return 0;
+}
