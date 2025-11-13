@@ -1,0 +1,33 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n, m;
+    cout << "Tamano de A: ";
+    cin >> n;
+    cout << "Tamano de B: ";
+    cin >> m;
+
+    vector<int> A(n), B(m);
+    cout << "A (ordenado ascendente):\n";
+    for (int i = 0; i < n; ++i) cin >> A[i];
+    cout << "B (ordenado ascendente):\n";
+    for (int i = 0; i < m; ++i) cin >> B[i];
+
+    vector<int> C;
+    C.reserve(n + m);
+
+    int i = 0, j = 0;
+    while (i < n && j < m) {
+        if (A[i] <= B[j]) C.push_back(A[i++]);
+        else              C.push_back(B[j++]);
+    }
+    while (i < n) C.push_back(A[i++]);
+    while (j < m) C.push_back(B[j++]);
+
+    cout << "Vector combinado ordenado:\n";
+    for (int x : C) cout << x << " ";
+    cout << endl;
+    return 0;
+}
