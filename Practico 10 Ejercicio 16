@@ -1,0 +1,74 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    vector<string> alumnos;
+    vector<double> notas;
+
+    int opcion;
+    do {
+        cout << "\nMENU\n";
+        cout << "1) Ingresar alumno y nota\n";
+        cout << "2) Listar alumnos\n";
+        cout << "3) Ordenar alfabeticamente\n";
+        cout << "4) Mostrar mejor nota\n";
+        cout << "5) Mostrar promedio\n";
+        cout << "0) Salir\n";
+        cout << "Opcion: ";
+        cin >> opcion;
+
+        if (opcion == 1) {
+            string nombre;
+            double nota;
+            cout << "Nombre: ";
+            cin >> nombre;
+            cout << "Nota: ";
+            cin >> nota;
+            alumnos.push_back(nombre);
+            notas.push_back(nota);
+        }
+        else if (opcion == 2) {
+            cout << "Listado:\n";
+            for (size_t i = 0; i < alumnos.size(); ++i)
+                cout << alumnos[i] << " - " << notas[i] << endl;
+        }
+        else if (opcion == 3) {
+            // ordenar por nombre manteniendo nota
+            for (size_t i = 0; i + 1 < alumnos.size(); ++i) {
+                for (size_t j = 0; j + 1 < alumnos.size() - i; ++j) {
+                    if (alumnos[j] > alumnos[j+1]) {
+                        swap(alumnos[j], alumnos[j+1]);
+                        swap(notas[j], notas[j+1]);
+                    }
+                }
+            }
+            cout << "Ordenado alfabeticamente.\n";
+        }
+        else if (opcion == 4) {
+            if (alumnos.empty()) {
+                cout << "No hay alumnos.\n";
+            } else {
+                int pos = 0;
+                for (size_t i = 1; i < notas.size(); ++i)
+                    if (notas[i] > notas[pos]) pos = (int)i;
+
+                cout << "Mejor nota: " << alumnos[pos]
+                     << " - " << notas[pos] << endl;
+            }
+        }
+        else if (opcion == 5) {
+            if (alumnos.empty()) {
+                cout << "No hay alumnos.\n";
+            } else {
+                double suma = 0;
+                for (double n : notas) suma += n;
+                cout << "Promedio: " << (suma / notas.size()) << endl;
+            }
+        }
+
+    } while (opcion != 0);
+
+    return 0;
+}
