@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Cantidad de elementos: ";
+    cin >> n;
+
+    vector<int> v(n);
+    cout << "Ingrese los valores:\n";
+    for (int i = 0; i < n; ++i) cin >> v[i];
+
+    int neg = 0, pos = 0, ceros = 0;
+    for (int x : v) {
+        if (x < 0) neg++;
+        else if (x > 0) pos++;
+        else ceros++;
+    }
+
+    cout << "Negativos: " << neg << endl;
+    cout << "Positivos: " << pos << endl;
+    cout << "Ceros: " << ceros << endl;
+
+    return 0;
+}
