@@ -1,0 +1,27 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n, m;
+    cout << "Tamano de A: ";
+    cin >> n;
+    cout << "Tamano de B: ";
+    cin >> m;
+
+    vector<int> A(n), B(m);
+    cout << "Elementos de A:\n";
+    for (int i = 0; i < n; ++i) cin >> A[i];
+    cout << "Elementos de B:\n";
+    for (int i = 0; i < m; ++i) cin >> B[i];
+
+    vector<int> C;
+    C.reserve(n + m);  // opcional
+    for (int x : A) C.push_back(x);
+    for (int x : B) C.push_back(x);
+
+    cout << "Vector concatenado:\n";
+    for (int x : C) cout << x << " ";
+    cout << endl;
+    return 0;
+}
