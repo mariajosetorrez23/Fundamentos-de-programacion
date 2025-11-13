@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Cantidad de elementos: ";
+    cin >> n;
+
+    vector<int> v(n);
+    cout << "Ingrese los valores:\n";
+    for (int i = 0; i < n; ++i) cin >> v[i];
+
+    vector<int> sinDup;
+    for (int x : v) {
+        bool yaEsta = false;
+        for (int y : sinDup)
+            if (y == x) { yaEsta = true; break; }
+        if (!yaEsta)
+            sinDup.push_back(x);
+    }
+
+    cout << "Vector sin duplicados:\n";
+    for (int x : sinDup) cout << x << " ";
+    cout << endl;
+    return 0;
+}
+
