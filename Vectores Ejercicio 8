@@ -1,27 +1,40 @@
 #include <iostream>
 using namespace std;
 
-int main(){
+int main() {
     int n;
-    cout << "Cantidad de valores: ";
+    cout << "Cuantos elementos tiene el vector? ";
     cin >> n;
 
+    if (n < 2) {
+        cout << "Debe haber al menos 2 numeros." << endl;
+        return 0;
+    }
+
     float v[100];
-    for(int i = 0; i < n; i++){
+
+    // Leer los valores
+    for (int i = 0; i < n; i++) {
+        cout << "Valor " << i + 1 << ": ";
         cin >> v[i];
     }
 
-    float mayor = 0;
+    // Calculamos la primera diferencia para iniciar "mayor"
+    float dif = v[1] - v[0];
+    if (dif < 0) dif = -dif;
+    float mayor = dif;
 
-    for(int i = 0; i < n-1; i++){
-        float dif = v[i+1] - v[i];
-        if(dif < 0) dif = -dif;
+    // Recorremos el resto
+    for (int i = 1; i < n - 1; i++) {
+        float d = v[i+1] - v[i];
+        if (d < 0) d = -d;   // valor absoluto
 
-        if(dif > mayor){
-            mayor = dif;
+        if (d > mayor) {
+            mayor = d;
         }
     }
 
-    cout << "Mayor diferencia consecutiva: " << mayor;
+    cout << "Mayor diferencia entre elementos consecutivos: " << mayor << endl;
+
     return 0;
 }
