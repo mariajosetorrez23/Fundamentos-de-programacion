@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+string numeroALetra(int n){
+    string palabras[] = {"CERO","UNO","DOS","TRES","CUATRO","CINCO","SEIS","SIETE","OCHO","NUEVE",
+                         "DIEZ","ONCE","DOCE","TRECE","CATORCE","QUINCE","DIECISEIS",
+                         "DIECISIETE","DIECIOCHO","DIECINUEVE","VEINTE"};
+
+    if(n >= 0 && n <= 20){
+        return palabras[n];
+    }
+
+    return "No disponible";
+}
+
+int main(){
+    int num;
+    cout << "Ingrese numero: ";
+    cin >> num;
+
+    cout << numeroALetra(num);
+
+    return 0;
+}
