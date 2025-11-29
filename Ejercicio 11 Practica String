@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string SubCadena(string cad, int p, int n){
+    string r = "";
+    for(int i = p; i < p + n && i < cad.size(); i++){
+        r += cad[i];
+    }
+    return r;
+}
+
+int main(){
+    string texto;
+    int p, n;
+
+    cout << "Ingrese texto: ";
+    getline(cin, texto);
+
+    cout << "Posicion: ";
+    cin >> p;
+
+    cout << "Longitud: ";
+    cin >> n;
+
+    string resultado = SubCadena(texto, p, n);
+
+    cout << "Subcadena: " << resultado;
+
+    return 0;
+}
