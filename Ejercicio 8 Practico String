@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(){
+    int n;
+    cout << "Cuantas palabras ingresara? ";
+    cin >> n;
+
+    string palabra, resultado = "";
+    cin.ignore(); // limpiar buffer
+
+    for(int i = 0; i < n; i++){
+        getline(cin, palabra);
+        resultado += palabra;
+        if(i < n-1) resultado += " ";
+    }
+
+    cout << "Resultado: " << resultado;
+    return 0;
+}
