@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+#include <ctype.h>
+using namespace std;
+
+int main(){
+    string cad;
+    cout << "Ingrese texto: ";
+    getline(cin, cad);
+
+    bool inicio = true;
+
+    for(int i = 0; i < cad.size(); i++){
+        if(inicio && cad[i] != ' '){
+            cad[i] = toupper(cad[i]);
+            inicio = false;
+        }
+        if(cad[i] == ' ')
+            inicio = true;
+    }
+
+    cout << cad;
+    return 0;
+}
