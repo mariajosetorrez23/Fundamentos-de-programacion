@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cout << "Cantidad de valores: ";
+    cin >> n;
+
+    float v[100];
+
+    for(int i = 0; i < n; i++){
+        cin >> v[i];
+    }
+
+    float min = v[0];
+
+    for(int i = 1; i < n; i++){
+        if(v[i] < min){
+            min = v[i];
+        }
+    }
+
+    cout << "Minimo: " << min;
+
+    return 0;
+}
+
