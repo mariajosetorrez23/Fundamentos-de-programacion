@@ -1,0 +1,25 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main(){
+    int n;
+    cout << "Cuantos caracteres quiere ingresar? ";
+    cin >> n;
+
+    char letras[100];
+
+    for(int i = 0; i < n; i++){
+        cout << "Letra " << i+1 << ": ";
+        cin >> letras[i];
+    }
+
+    sort(letras, letras + n);
+
+    cout << "Ordenados: ";
+    for(int i = 0; i < n; i++){
+        cout << letras[i];
+    }
+
+    return 0;
+}
