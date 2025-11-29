@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cout << "Cantidad de valores: ";
+    cin >> n;
+
+    float v[100], suma = 0;
+
+    for(int i = 0; i < n; i++){
+        cin >> v[i];
+        suma += v[i];
+    }
+
+    cout << "Promedio: " << suma / n;
+    return 0;
+}
