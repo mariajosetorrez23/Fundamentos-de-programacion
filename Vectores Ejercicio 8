@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cout << "Cantidad de valores: ";
+    cin >> n;
+
+    float v[100];
+    for(int i = 0; i < n; i++){
+        cin >> v[i];
+    }
+
+    float mayor = 0;
+
+    for(int i = 0; i < n-1; i++){
+        float dif = v[i+1] - v[i];
+        if(dif < 0) dif = -dif;
+
+        if(dif > mayor){
+            mayor = dif;
+        }
+    }
+
+    cout << "Mayor diferencia consecutiva: " << mayor;
+    return 0;
+}
