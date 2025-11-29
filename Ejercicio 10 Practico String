@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <ctype.h>
+using namespace std;
+
+bool esVocal(char c){
+    c = tolower(c);
+    return c=='a' || c=='e' || c=='i' || c=='o' || c=='u';
+}
+
+int main(){
+    string cad;
+    cout << "Ingrese texto: ";
+    getline(cin, cad);
+
+    int contador = 0;
+
+    for(int i = 0; i < cad.size() - 1; i++){
+        if(esVocal(cad[i]) && esVocal(cad[i+1])){
+            contador++;
+            cout << cad[i] << cad[i+1] << " ";
+        }
+    }
+
+    cout << "\nHay " << contador << " pares de vocales juntas.";
+    return 0;
+}
