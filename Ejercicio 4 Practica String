@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(){
+    string cad, invertida = "";
+    cout << "Ingrese palabra: ";
+    getline(cin, cad);
+
+    for(int i = cad.size() - 1; i >= 0; i--){
+        invertida += cad[i];
+    }
+
+    cout << "Invertida: " << invertida << endl;
+
+    if(cad == invertida)
+        cout << "Es capicua";
+    else
+        cout << "No es capicua";
+
+    return 0;
+}
