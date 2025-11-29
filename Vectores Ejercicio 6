@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cout << "Cantidad de valores: ";
+    cin >> n;
+
+    float v[100];
+    for(int i = 0; i < n; i++){
+        cin >> v[i];
+    }
+
+    cout << "Promedios de cada 3 valores:\n";
+
+    for(int i = 0; i < n-2; i++){
+        float prom = (v[i] + v[i+1] + v[i+2]) / 3;
+        cout << "P" << i+1 << ": " << prom << endl;
+    }
+
+    return 0;
+}
