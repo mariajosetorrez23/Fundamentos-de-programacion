@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cout << "Cuantos valores tendra el vector? ";
+    cin >> n;
+
+    float v[100];
+
+    for(int i = 0; i < n; i++){
+        cout << "Valor " << i+1 << ": ";
+        cin >> v[i];
+    }
+
+    float max = v[0];
+    for(int i = 1; i < n; i++){
+        if(v[i] > max){
+            max = v[i];
+        }
+    }
+
+    cout << "Maximo: " << max;
+    return 0;
+}
