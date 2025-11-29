@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool esVocal(char c){
+    c = tolower(c);
+    return c=='a' || c=='e' || c=='i' || c=='o' || c=='u';
+}
+
+int main(){
+    string cad, salida = "";
+    cout << "Ingrese texto: ";
+    getline(cin, cad);
+
+    for(int i = 0; i < cad.size(); i++){
+        if(!esVocal(cad[i])){
+            salida += cad[i];
+        }
+    }
+
+    cout << salida;
+    return 0;
+}
