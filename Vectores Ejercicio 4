@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cout << "Cantidad de elementos: ";
+    cin >> n;
+
+    int v[100], r[100];
+
+    for(int i = 0; i < n; i++){
+        cin >> v[i];
+    }
+
+    for(int i = 0; i < n; i++){
+        r[i] = v[n-1-i];
+    }
+
+    cout << "Vector invertido: ";
+    for(int i = 0; i < n; i++){
+        cout << r[i] << " ";
+    }
+
+    return 0;
+}
