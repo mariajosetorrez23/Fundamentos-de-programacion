@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Cuantos elementos tiene el vector? ";
+    cin >> n;
+
+    if (n <= 0 || n > 100) {
+        cout << "Cantidad invalida." << endl;
+        return 0;
+    }
+
+    float v[100];
+
+    // Leer valores
+    for (int i = 0; i < n; i++) {
+        cout << "Valor " << i + 1 << ": ";
+        cin >> v[i];
+    }
+
+    // ORDENAMIENTO (burbuja simple)
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (v[j] > v[j + 1]) {
+                float aux = v[j];
+                v[j] = v[j + 1];
+                v[j + 1] = aux;
+            }
+        }
+    }
+
+    // Mostrar vector ordenado
+    cout << "Vector ordenado: ";
+    for (int i = 0; i < n; i++) {
+        cout << v[i] << " ";
+    }
+
+    cout << endl;
+    return 0;
+}
