@@ -1,27 +1,37 @@
 #include <iostream>
 using namespace std;
 
-int main(){
+int main() {
     int n;
-    cout << "Cantidad de valores: ";
+    cout << "Cuantos valores tendra el vector? ";
     cin >> n;
+
+    if (n <= 0 || n > 100) {
+        cout << "Cantidad invalida." << endl;
+        return 0;
+    }
 
     float v[100];
 
-    for(int i = 0; i < n; i++){
+    // leer los valores
+    for (int i = 0; i < n; i++) {
+        cout << "Valor " << i + 1 << ": ";
         cin >> v[i];
     }
 
-    float min = v[0];
+    // suponemos que el menor es el primero
+    float minimo = v[0];
 
-    for(int i = 1; i < n; i++){
-        if(v[i] < min){
-            min = v[i];
+    // comparamos con el resto
+    for (int i = 1; i < n; i++) {
+        if (v[i] < minimo) {
+            minimo = v[i];
         }
     }
 
-    cout << "Minimo: " << min;
+    cout << "El minimo es: " << minimo << endl;
 
     return 0;
 }
+
 
