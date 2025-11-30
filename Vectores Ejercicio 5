@@ -1,29 +1,40 @@
 #include <iostream>
 using namespace std;
 
-int main(){
+int main() {
     int n;
-    cout << "Cantidad de elementos: ";
+
+    cout << "Cuantos elementos tiene el vector? ";
     cin >> n;
 
+    if (n <= 0 || n > 100) {
+        cout << "Cantidad no valida." << endl;
+        return 0;
+    }
+
     int v[100];
-    for(int i = 0; i < n; i++){
+
+    // Leer los elementos
+    for (int i = 0; i < n; i++) {
+        cout << "Elemento " << i + 1 << ": ";
         cin >> v[i];
     }
 
     bool capicua = true;
 
-    for(int i = 0; i < n/2; i++){
-        if(v[i] != v[n-1-i]){
+    // Comprobar capicua
+    for (int i = 0; i < n / 2; i++) {
+        if (v[i] != v[n - 1 - i]) {
             capicua = false;
             break;
         }
     }
 
-    if(capicua)
-        cout << "Es capicua";
-    else
-        cout << "No es capicua";
+    if (capicua) {
+        cout << "Es capicua" << endl;
+    } else {
+        cout << "No es capicua" << endl;
+    }
 
     return 0;
 }
